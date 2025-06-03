@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт по психологии</title>
     <link rel="stylesheet" href="./main.css">
+    <style>
+        .error-message {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .input-error {
+            border: 2px solid #ff6b6b !important;
+        }
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .success-content {
+            background-color: #3B7A8B;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            max-width: 400px;
+            width: 90%;
+        }
+        .success-content h2 {
+            margin-top: 0;
+        }
+        .success-content button {
+            background-color: white;
+            color: #3B7A8B;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 <nav class="nav">
@@ -24,110 +69,328 @@
   </div>
 </nav>
 <style>
-
-form {
-margin: 20px auto;
-width: 576px;
-height: 970px;
-max-width: 100%; 
-border-radius:28px;
-background-color: #3B7A8B;
-  }
+    form {
+        margin: 20px auto;
+        width: 576px;
+        height: 970px;
+        max-width: 100%; 
+        border-radius:28px;
+        background-color: #3B7A8B;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 </style>
-<form>
-<div class=Titel-tex>
-<h2>Мысли</h2>
-</div>
-<p class="Img"><Img src="логотип.png" alt="" width="50" height="71">
-  <div class="Text">
-    <span class="highlight">Регистрация</span>
-    <a href="login.html" class="login">Вход</a> 
+<form id="registerForm">
+    <div class=Titel-tex>
+        <h2>Мысли</h2>
+    </div>
+    <p class="Img"><Img src="логотип.png" alt="" width="50" height="71">
+    <div class="Text">
+        <span class="highlight">Регистрация</span>
+        <a href="login.html" class="login">Вход</a> 
     </div>
     
     <style>
-      input[type=text]
-      {
-     padding: 20px;
-      width:379px;
-      height:58px;
-      border-radius: 28px;
-      background-color:#fff ;
-      margin-top:30px ;
-      text-emphasis-color:#828282 ;
-      
-      }
-      input[type=password]{
-      padding: 20px;
-      width:379px;
-      height:58px;
-      border-radius: 28px;
-      background-color:#fff ;
-      margin-top:30px ;
-      text-emphasis-color:#828282 ;  
-      }
+        input[type=text] {
+            padding: 20px;
+            width:379px;
+            height:58px;
+            border-radius: 28px;
+            background-color:#fff;
+            margin-top:30px;
+            color:#828282;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type=password] {
+            padding: 20px;
+            width:379px;
+            height:58px;
+            border-radius: 28px;
+            background-color:#fff;
+            margin-top:30px;
+            color:#828282;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
     <div class="input-container">
-      <label for="Почта"></label>
-<label for="Имя и фамилия пользователя"></label>
-<label for="Пароль"></label>
-<label for="Номер телефона"></label>
-<label for="Дата рождения"></label>
-<input type="text" id="email"placeholder="Почта" name="email" required>
-<input type="text" id="ФИО" placeholder="Имя фамилия  и отчество пользователя" name="ФИО" required>
-<input type ="password"  placeholder="Пароль" name="psw" required>
-<input type="text" id="Номер телефона" placeholder="Номер телефона" name="Номер телефона" required>
-<input type="text" id="Дата рождения" name="Дата рождения" placeholder="ДД.ММ.ГГГГ" required pattern="\d{2}\.\d{2}\.\d{4}" title="Введите дату в формате ДД.ММ.ГГГГ">
-<style>
-  input[type=checkbox] {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-justify: center;
-      width: 15px;
-      height: 15px;
-      border-radius: 28px; 
-      border: 2px solid #fff;
-      outline: none;
-      cursor: pointer;
-      background-color: transparent; 
-      position: relative; 
-  }
-  input[type=checkbox]:checked {
-      background-color: #fff; 
-      margin-right: 10px;
-      
-  }
-  input[type=checkbox]:checked::before {
-      content: "";
-      text-justify: center;
-      display: block;
-      width: 10px;
-      height: 10px;
-      border-radius: 28%; 
-      background-color: #fff; 
-      position: absolute;
-      top: 0;
-      left: 0;
-  }
-</style>
-<div class="checkbox-container">
- <label >
-<input type="checkbox" checked="checked" name="remember"> 
-<span class="span-text"> Обработка персональных данных</span>
-</label>
-</div>
-</input>
-</div>
-<button class="button-castom">Зарегистрироваться</button>
-<style>
-a{
-display: inline-block;  
-margin-bottom: 20px;
-text-align: center;
-}
-</style>
-<a href="login.html"class="p">Назад</a>
+        <label for="Почта"></label>
+        <label for="Имя и фамилия пользователя"></label>
+        <label for="Пароль"></label>
+        <label for="Номер телефона"></label>
+        <label for="Дата рождения"></label>
+        
+        <input type="text" id="email" placeholder="Почта" name="email" required>
+        <div id="email-error" class="error-message">Пожалуйста, введите корректный email (например: example@mail.com)</div>
+        
+        <input type="text" id="name" placeholder="Имя фамилия и отчество пользователя" name="ФИО" required>
+        <div id="name-error" class="error-message">Пожалуйста, введите ваше ФИО</div>
+        
+        <input type="password" id="password" placeholder="Пароль" name="psw" required>
+        <div id="password-error" class="error-message">Пароль должен содержать минимум 6 символов и хотя бы одну заглавную букву латинского алфавита</div>
+        
+        <input type="text" id="phone" placeholder="Номер телефона" name="Номер телефона" required>
+        <div id="phone-error" class="error-message">Пожалуйста, введите корректный номер телефона (например: +79991234567)</div>
+        
+        <input type="text" id="birthdate" name="Дата рождения" placeholder="ДД.ММ.ГГГГ" required pattern="\d{2}\.\d{2}\.\d{4}" title="Введите дату в формате ДД.ММ.ГГГГ">
+        <div id="birthdate-error" class="error-message">Пожалуйста, введите дату в формате ДД.ММ.ГГГГ</div>
+        
+        <style>
+            input[type=checkbox] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                text-justify: center;
+                width: 15px;
+                height: 15px;
+                border-radius: 28px; 
+                border: 2px solid #fff;
+                outline: none;
+                cursor: pointer;
+                background-color: transparent; 
+                position: relative; 
+            }
+            input[type=checkbox]:checked {
+                background-color: #fff; 
+                margin-right: 10px;
+            }
+            input[type=checkbox]:checked::before {
+                content: "";
+                text-justify: center;
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 28%; 
+                background-color: #fff; 
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .checkbox-container {
+                margin-top: 20px;
+                color: white;
+                display: flex;
+                align-items: center;
+            }
+            .span-text {
+                margin-left: 10px;
+            }
+        </style>
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox" id="privacy-checkbox" name="remember" required> 
+                <span class="span-text"> Обработка персональных данных</span>
+            </label>
+        </div>
+        <div id="checkbox-error" class="error-message">Необходимо согласие на обработку персональных данных</div>
+    </div>
+    <button type="submit" class="button-castom">Зарегистрироваться</button>
+    <style>
+        a {
+            display: inline-block;  
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+        .button-castom {
+            width: 379px;
+            height: 58px;
+            border-radius: 28px;
+            background-color: #fff;
+            color: #3B7A8B;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button-castom:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <a href="login.html" class="p">Назад</a>
 </form>
+
+<!-- Модальное окно успешной регистрации -->
+<div id="successModal" class="success-modal">
+    <div class="success-content">
+        <h2>Регистрация успешна!</h2>
+        <p>Вы успешно зарегистрированы на нашем сайте.</p>
+        <button id="successButton">OK</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Сброс предыдущих ошибок
+        resetErrors();
+        
+        // Проверка полей
+        const emailValid = validateEmail();
+        const phoneValid = validatePhone();
+        const passwordValid = validatePassword();
+        const nameValid = validateName();
+        const birthdateValid = validateBirthdate();
+        const checkboxValid = validateCheckbox();
+        
+        // Если все проверки пройдены, показываем модальное окно
+        if (emailValid && phoneValid && passwordValid && nameValid && birthdateValid && checkboxValid) {
+            showSuccessModal();
+        }
+    });
+    
+    function validateEmail() {
+        const email = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email.value)) {
+            email.classList.add('input-error');
+            emailError.style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    
+    function validatePhone() {
+        const phone = document.getElementById('phone');
+        const phoneError = document.getElementById('phone-error');
+        const phoneRegex = /^\+?\d{11,15}$/;
+        
+        // Удаляем все нецифровые символы, кроме +
+        const cleanPhone = phone.value.replace(/[^\d+]/g, '');
+        
+        if (!phoneRegex.test(cleanPhone)) {
+            phone.classList.add('input-error');
+            phoneError.style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    
+    function validatePassword() {
+        const password = document.getElementById('password');
+        const passwordError = document.getElementById('password-error');
+        const passwordRegex = /^(?=.*[A-Z]).{6,}$/;
+        
+        if (!passwordRegex.test(password.value)) {
+            password.classList.add('input-error');
+            passwordError.style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    
+    function validateName() {
+        const name = document.getElementById('name');
+        const nameError = document.getElementById('name-error');
+        
+        if (name.value.trim() === '') {
+            name.classList.add('input-error');
+            nameError.style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    
+    function validateBirthdate() {
+        const birthdate = document.getElementById('birthdate');
+        const birthdateError = document.getElementById('birthdate-error');
+        const dateRegex = /^\d{2}\.\d{2}\.\d{4}$/;
+        
+        if (!dateRegex.test(birthdate.value)) {
+            birthdate.classList.add('input-error');
+            birthdateError.style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    
+    function validateCheckbox() {
+        const checkbox = document.getElementById('privacy-checkbox');
+        const checkboxError = document.getElementById('checkbox-error');
+        
+        if (!checkbox.checked) {
+            checkboxError.style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+    
+    function resetErrors() {
+        // Сбрасываем все ошибки
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(error => {
+            error.style.display = 'none';
+        });
+        
+        const errorInputs = document.querySelectorAll('.input-error');
+        errorInputs.forEach(input => {
+            input.classList.remove('input-error');
+        });
+    }
+    
+    // Показываем модальное окно успешной регистрации
+    function showSuccessModal() {
+        const modal = document.getElementById('successModal');
+        modal.style.display = 'flex';
+    }
+    
+    // Закрываем модальное окно при нажатии на кнопку
+    document.getElementById('successButton').addEventListener('click', function() {
+        document.getElementById('successModal').style.display = 'none';
+        // Здесь можно добавить перенаправление на другую страницу
+        // window.location.href = 'profile.html';
+    });
+    
+    // Добавляем обработчики для валидации при вводе
+    document.getElementById('email').addEventListener('input', function() {
+        if (this.classList.contains('input-error')) {
+            validateEmail();
+        }
+    });
+    
+    document.getElementById('phone').addEventListener('input', function() {
+        if (this.classList.contains('input-error')) {
+            validatePhone();
+        }
+    });
+    
+    document.getElementById('password').addEventListener('input', function() {
+        if (this.classList.contains('input-error')) {
+            validatePassword();
+        }
+    });
+    
+    document.getElementById('name').addEventListener('input', function() {
+        if (this.classList.contains('input-error')) {
+            validateName();
+        }
+    });
+    
+    document.getElementById('birthdate').addEventListener('input', function() {
+        if (this.classList.contains('input-error')) {
+            validateBirthdate();
+        }
+    });
+    
+    document.getElementById('privacy-checkbox').addEventListener('change', function() {
+        const checkboxError = document.getElementById('checkbox-error');
+        if (this.checked) {
+            checkboxError.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
- 
